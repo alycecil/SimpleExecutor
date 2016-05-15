@@ -27,11 +27,6 @@ bootRepackage { mainClass = 'com.acecil.controller.FilePlayerController' }
 
 test { systemProperties 'property': 'value' }
 
-uploadArchives {
-	repositories { flatDir { dirs 'repos'
-		} }
-}
-
 test {
 	useTestNG()
 
@@ -40,3 +35,5 @@ test {
 		exceptionFormat "full"
 	}
 }
+
+bootRepackage.dependsOn test
