@@ -13,7 +13,9 @@ import com.acecil.util.Enviroment
 @EnableAutoConfiguration
 @CompileStatic
 public class FilePlayerController {
-	static String VLC_COMMAND = "vlc"
+	String VLC_COMMAND = "vlc"
+
+	public static final String PARAM_VLC_SETS_VLC_COMMAND = "Param vlc sets VLC Command"
 
 	@RequestMapping("/settings")
 	@ResponseBody
@@ -27,7 +29,7 @@ public class FilePlayerController {
 
 
 		if(!didSomething){
-			return "Param vlc sets VLC Command"
+			return PARAM_VLC_SETS_VLC_COMMAND
 		}
 		
 		return 'success'
