@@ -1,3 +1,8 @@
+buildscript {
+	repositories { mavenCentral() }
+	dependencies { classpath("org.springframework.boot:spring-boot-gradle-plugin:1.3.5.RELEASE") }
+}
+apply plugin: 'spring-boot'
 apply plugin: 'groovy'
 apply plugin: 'eclipse'
 
@@ -18,10 +23,10 @@ dependencies {
 	testCompile group: 'junit', name: 'junit', version: '4.+'
 }
 
+bootRepackage { mainClass = 'com.acecil.controller.FilePlayerController' }
+
 test { systemProperties 'property': 'value' }
 
 uploadArchives {
-	repositories {
-		flatDir { dirs 'repos' }
-	}
+	repositories { flatDir { dirs 'repos' } }
 }
